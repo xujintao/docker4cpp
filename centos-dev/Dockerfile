@@ -11,7 +11,7 @@ RUN echo "===>install software collections" && yum install -y centos-release-scl
     echo "===>print pwd" && pwd && \
     echo "===>ls -al" && ls -al && \
     echo "===>tar boost and cd" && tar -xzf boost_1_54_0.tar.gz && cd boost_1_54_0 && \
-    echo "===>build boost" && ./bootstrap.sh && ./b2 --with-log --with-thread --with-system --with-filesystem && \
+    echo "===>build boost" && ./bootstrap.sh && ./b2 -d0 --with-log --with-thread --with-system --with-filesystem && \
     echo "===>cp headers and libs" && cp -drf boost /usr/include && cp -drf stage/lib* /usr/lib64 && cd .. && \
     echo "===>yum clean all" && yum clean all -y && \
     echo "===>rm tmp files" && cd .. && rm -rf boost*
