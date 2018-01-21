@@ -9,7 +9,7 @@ RUN echo "===>install software collections" && yum install -y centos-release-scl
     echo "===>install wget" && yum install -y wget && \
     echo "===>wget boost" && wget -q https://sourceforge.net/projects/boost/files/boost/1.54.0/boost_1_54_0.tar.gz/download && \
     echo "===>print pwd" && pwd && \
-    echo "===>ls -al" && ll && \
+    echo "===>ls -al" && ls -al && \
     echo "===>tar boost and cd" && tar -xzvf boost_1_54_0.tar.gz && cd boost_1_54_0 && \
     echo "===>build boost" && ./booststrap.sh && ./b2 && \
     echo "===>cp headers and libs" && cp -drf boost /usr/include && cp -drf stage/lib* /usr/lib64 && cd .. && \
