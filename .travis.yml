@@ -1,0 +1,15 @@
+sudo: true
+
+services:
+- docker
+
+install:
+- docker build -t xujintao/docker4cpp:centos-dev ./centos-dev
+- docker build -t xujintao/docker4cpp:ubuntu-dev ./ubuntu-dev
+- docker build -t xujintao/docker4cpp:ubuntu-runtime ./ubuntu-runtime
+
+script:
+- docker images
+#- docker run xujintao/docker4cpp:centos-dev
+#- docker run xujintao/docker4cpp:ubuntu-dev
+#- docker run xujintao/docker4cpp:ubuntu-runtime
