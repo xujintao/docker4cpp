@@ -7,7 +7,7 @@ RUN echo "===>install software collections" && yum install -y centos-release-scl
     echo "===>enable devtoolset-7" && source /opt/rh/devtoolset-7/enable && \
     echo "===>printf gcc version" && gcc --version && \
     echo "===>install wget" && yum install -y wget && \
-    echo "===>wget boost" && wget -q https://sourceforge.net/projects/boost/files/boost/1.54.0/boost_1_54_0.tar.gz/download && \
+    echo "===>wget boost" && wget -q https://sourceforge.net/projects/boost/files/boost/1.54.0/boost_1_54_0.tar.gz && \
     echo "===>print pwd" && pwd && \
     echo "===>ls -al" && ls -al && \
     echo "===>tar boost and cd" && tar -xzvf boost_1_54_0.tar.gz && cd boost_1_54_0 && \
