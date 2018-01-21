@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/xujintao/docker4cpp.svg?branch=master)](https://travis-ci.org/xujintao/docker4cpp)
+
 docker environment for c++ development and runtime.
 
 ## Summary  
