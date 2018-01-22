@@ -4,9 +4,10 @@ MAINTAINER xujintao <xujintao@126.com>
 # repare dev environment
 RUN echo "===>install software collections" && yum install -y centos-release-scl-rh && \
     echo "===>install devtoolset-7" && yum install -y devtoolset-7-gcc devtoolset-7-gcc-c++ devtoolset-7-gdb && \
-    echo "===>enable devtoolset-7" && echo "source /opt/rh/devtoolset-7/enable" >> ~/.bashrc && \
-    echo "===>install make" && yum install -y make && \
+    echo "===>enable devtoolset-7" && source /opt/rh/devtoolset-7/enable && \
+    echo "===>enable devtoolset-7 forever" && echo "source /opt/rh/devtoolset-7/enable" >> ~/.bashrc && \
     echo "===>printf gcc version" && gcc --version && \
+    echo "===>install make" && yum install -y make && \
     echo "===>install wget" && yum install -y wget && \
     echo "===>wget boost" && wget -q https://sourceforge.net/projects/boost/files/boost/1.54.0/boost_1_54_0.tar.gz && \
     echo "===>print pwd" && pwd && \
