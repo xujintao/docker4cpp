@@ -16,4 +16,4 @@ RUN apt-get -y update && \
 # host dir -> container dir
 #ADD ./build/* /opt/www/ratel/
 
-#ENTRYPOINT exec /opt/www/ratel/restart.sh
+#CMD /opt/www/ratel/restart.sh

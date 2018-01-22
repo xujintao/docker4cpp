@@ -19,4 +19,4 @@ RUN echo "===>install software collections" && yum install -y centos-release-scl
     echo "===>rm tmp files" && cd .. && rm -rf boost*
 
 WORKDIR "/project"
-ENTRYPOINT exec ./build.sh
+CMD ./build.sh

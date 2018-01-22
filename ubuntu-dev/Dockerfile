@@ -12,4 +12,4 @@ RUN apt-get -y update && \
     ln -s /usr/bin/g++-7 /usr/bin/g++ -f
 
 WORKDIR "/project"
-ENTRYPOINT exec ./build.sh
+CMD ./build.sh
