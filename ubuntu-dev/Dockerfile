@@ -1,7 +1,7 @@
 FROM ubuntu:14.04
 MAINTAINER xujintao <xujintao@126.com>
 
-# repare dev environment
+# prepare dev environment
 RUN apt-get -y update && \
     apt-get -y install software-properties-common && \
     apt-add-repository -y "ppa:ubuntu-toolchain-r/test" && \
