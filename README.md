@@ -9,7 +9,7 @@ Repository name in Docker Hub: [xujintao/docker4cpp](https://hub.docker.com/r/xu
 * [xujintao/docker4cpp:ubuntu-dev](https://github.com/xujintao/docker4cpp/tree/master/ubuntu-dev)  
 * [xujintao/docker4cpp:ubuntu-runtime](https://github.com/xujintao/docker4cpp/tree/master/ubuntu-runtime)  
 * [xujintao/docker4cpp:centos-dev](https://github.com/xujintao/docker4cpp/tree/master/centos-dev)  
-Warning, for docker is not friendly with container environment variable, so we must enable it explicitly in build.sh:
+Warning, for docker is not friendly with container environment variable, so we must enable it explicitly at the beginning of build.sh:
 ```sh
 if [ -f /opt/rh/devtoolset-7/enable ];then
 echo test /opt/rh/devtoolset-7/enable
