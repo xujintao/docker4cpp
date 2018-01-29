@@ -1,15 +1,15 @@
 [![Build Status](https://travis-ci.org/xujintao/docker4cpp.svg?branch=master)](https://travis-ci.org/xujintao/docker4cpp)
 
-docker environment for c++ development and runtime.
+docker environment for c++ development.
 
 ## Summary  
 Repository name in Docker Hub: [xujintao/docker4cpp](https://hub.docker.com/r/xujintao/docker4cpp)  
 
 ## Image and tags  
 * [xujintao/docker4cpp:ubuntu-dev](https://github.com/xujintao/docker4cpp/tree/master/ubuntu-dev)  
-* [xujintao/docker4cpp:ubuntu-runtime](https://github.com/xujintao/docker4cpp/tree/master/ubuntu-runtime)  
 * [xujintao/docker4cpp:centos-dev](https://github.com/xujintao/docker4cpp/tree/master/centos-dev)  
-Warning, for docker is not friendly with container environment variable, so we must enable it explicitly at the beginning of build.sh:
+
+Due to docker is not friendly with container environment variable, so we must enable it explicitly at the beginning of build.sh:
 ```sh
 if [ -f /opt/rh/devtoolset-7/enable ];then
 echo test /opt/rh/devtoolset-7/enable
@@ -17,16 +17,14 @@ source /opt/rh/devtoolset-7/enable
 fi
 ```
 ## Understand
-* xujintao/docker4cpp:ubuntu-dev image is a cpp development environment which packed with 
-gcc-7, g++-7 and libboost1.54.0-dev-all in and it is primary assigned to compiling https://github.com/xujintao/ratel.  
+* The ubuntu-dev image is a ubuntu14.04 based cpp development environment which packed with gcc-7, g++-7, wget, make, 
+libboost-log1.54-dev, libboost-system1.54-dev, libboost-thread1.54-dev and libboost-filesystem1.54-dev in 
+and it is primary assigned to compiling https://github.com/xujintao/ratel.  
 
-* However, xujintao/docker4cpp:ubuntu-runtime as a cpp runtime environment image, here auto 
-built with dockerhub is a test image, and the really runtime image(see https://github.com/xujintao/ratel/blob/master/Dockerfile) 
-will be built field with travis-ci.  
+* Alternatively, centos-dev image owners the same features as ubuntu-dev except for that it is based on centos7.4.  
 
-* xujintao/docker4cpp:centos-dev is prepared for the building job with travis-ci which based on ubuntu14.04 trusty.  
-
-* The travis-ci ymal on ratel(https://github.com/xujintao/ratel/blob/master/.travis.yml) shows how they work with each other.  
+* Both of the two developing image will build ratel project field with travis-ci. The travis-ci 
+[ymal](https://github.com/xujintao/ratel/blob/master/.travis.yml) on ratel shows how they work with each other.  
 
 ## License
 
